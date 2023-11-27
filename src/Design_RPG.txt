@@ -1,0 +1,36 @@
+1.How and where to store data?
+    -เพิ่ม Hero class ขึ้นมาเพื่อเก็บ RPG character โดยมี field ดังนี้
+	1.(private)career เก็บอาชีพของ Hero มี type เป็น string 
+	2.(private)HP เก็บ HP ของ Hero มี type เป็น int
+	3.(private)mana เก็บ mana ของ Hero มี type เป็น int
+	4.(private)level เก็บ level ของ Hero มี type เป็น int
+	5.(private)runSpeed เก็บ runSpeed ของ Hero มี type เป็น double
+	6.(private)maxRunSpeed เก็บ maxRunSpeed ของ Hero มี type เป็น double
+	7.equipment เก็บ equipment ที่เลือกสวมใส่ของ Hero มี type เป็น Equipment
+  -เพิ่ม Equipment class ขึ้นมาเพื่อมาเก็บอาวุธของ hero ที่จะเลือกสวมใส่ โดยมี field ดังนี้
+	1.(private)equipLevel เก็บ level ของอาวุธ มี type เป็น int
+	2.(private)damage  เก็บ damage ของอาวุธ มี type เป็น double
+	3.(private)equip เก็บชนิดของอาวุธ มี type เป็น int string
+2.What operations are needed?
+  for Hero class
+	1.constructor Hero(String career) รับอาชีพของ hero ที่ผู้เล่นเลือกเข้ามาเพื่อสร้าง object ตัว hero นั้นๆ ขึ้นมา
+	2.creat(String career) รับอาชีพเข้ามาเช่นกัน เพื่อกำหนดค่า default พลังต่างๆ(HP,mana,runSpeed,maxRunSpeed) ตามอาชีพที่เลือก
+	3.setEquip(String equip) รับชื่ออาวุธที่ผู้เล่นต้องการสวมใส่ เพื่อไปสร้าง object อาวุธขึ้นมา ซึ่งมี 2 ขนิดคือ sword, shield และไปลด runspeed และ maxRunSpeed ลงตามอาวุธที่สวมใส่
+	4.levelUp() เมื่อ level เพิ่มขึ้น ค่า HP,mana จะเพิ่มขึ้นเป็น 2 เท่า เป็นการเพิ่มเลเวลแบบ manual
+	5.printAll() เอาไว้แสดงดูค่าสถานะต่างๆ ของ hero
+  for Equipment class
+	1.constructor Equipment(String equip) รับชื่ออาวุธที่ hero เลือกเข้ามา 
+	2.chooseEquip() เพื่อคำนวณ damage ของอาวุธ
+	3.levelUp() เพื่ออัพเลเวลของอาวุธทั้งหมดที่ใช้
+3.How and where to compute information?
+  - มีการอัพเดตค่า HP mana runSpeed maxRunSpeed ของ hero ใหม่ทุกครั้งเมื่อ hero ตัวนั้น level up สูตรคำนวณ ดังนี้ 
+	1.HP = HP*2
+	2.mana = mana*2
+	3.runSpeed = runSpeed*(0.1+0.04*level)
+	4.maxRunSpeed = runSpeed*10
+  - ทางด้าน equipment ค่า damage ของอาวุธจะถูกอัพเดตทุกครั้งเมื่ออาวุธมีการอัพเลเวล สูตรคำนวณ ดังนี้ 
+	sword  damage = damage*(1+0.1*equipLevel)
+	shield damage = damage*(1+0.5*equipLevel)
+	
+	
+
