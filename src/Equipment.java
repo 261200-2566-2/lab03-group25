@@ -5,7 +5,7 @@ public class Equipment {
     public Equipment(String equip){
         this.equip = equip;
     }
-    public void chooseEquip(){
+    public void chooseEquip(){ //instant method เมื่อเลือกอาวุธแล้ว damage ของอาวุธจะแตกต่างกันไป
         if(equip.equalsIgnoreCase("sword")){
             damage*=(1+0.1*equipLevel);
         }else if(equip.equalsIgnoreCase("shield")){
@@ -13,7 +13,7 @@ public class Equipment {
         }
         System.out.println("equip damage = " + damage);
     }
-    public static void levelUp(){
+    public static void levelUp(){ //class method level ของอาวุธเพิ่มขึ้น
         equipLevel++;
     }
 
