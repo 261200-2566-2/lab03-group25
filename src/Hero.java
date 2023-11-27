@@ -6,7 +6,7 @@ public class Hero {
     private double runSpeed;
     private double maxRunSpeed;
     public Equipment equipment;
-    private void create(String career){ //instant method
+    private void create(String career){ //instant method เอาไว้สร้าง charactor ค่าเริ่มต้นต่างๆ ขึ้นมามีให้เลือกเป็นอาชีพ 3 อาชีพ
         if(career.equalsIgnoreCase("tank")){
             HP = 30;
             mana = 30;
@@ -28,7 +28,7 @@ public class Hero {
         this.career = career;
         create(career);
     }
-    public void setEquip(String equip){ //instant method
+    public void setEquip(String equip){ //instant method player เรียกใช้อาวุธ runspeed ของตัว hero ก็จะลดลงตามที่กำหนดไว้
         if(equip.equalsIgnoreCase("sword")){
             runSpeed*=(0.1+0.04*level);
             equipment = new Equipment("sword");
@@ -41,7 +41,7 @@ public class Hero {
         maxRunSpeed = runSpeed*10;
         printAll();
     }
-    public void levelUp(){
+    public void levelUp(){ //level up เป็นแบบ manual เมื่อ level up แล้ว HP กับ mana จะสูงขึ้นเป็น 2 เท่าจากเดิม
         level++;
         HP*=2;
         mana*=2;
