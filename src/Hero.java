@@ -31,7 +31,7 @@ public class Hero {
     public void setEquip(String equip){ //instant method player เรียกใช้อาวุธ runspeed ของตัว hero ก็จะลดลงตามที่กำหนดไว้
         if(equip.equalsIgnoreCase("sword")){
             runSpeed*=(0.1+0.04*level);
-            equipment = new Equipment("sword");
+            equipment = new Equipment("sword"); // อาวุธต่างๆ ประกาศแบบ object
         }else if(equip.equalsIgnoreCase("shield")){
             runSpeed*=(0.1+0.08*level);
             equipment = new Equipment("shield");
