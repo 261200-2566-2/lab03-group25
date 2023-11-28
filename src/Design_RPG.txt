@@ -9,8 +9,9 @@
 	7.equipment เก็บ equipment ที่เลือกสวมใส่ของ Hero มี type เป็น Equipment
   -เพิ่ม Equipment class ขึ้นมาเพื่อมาเก็บอาวุธของ hero ที่จะเลือกสวมใส่ โดยมี field ดังนี้
 	1.(private)equipLevel เก็บ level ของอาวุธ มี type เป็น int
-	2.(private)damage  เก็บ damage ของอาวุธ มี type เป็น double
+	2.(private)damage  เก็บ damage ของอาวุธดาบ มี type เป็น double
 	3.(private)equip เก็บชนิดของอาวุธ มี type เป็น int string
+	4.(private)defense  เก็บ defense(การป้องกัน) ของโล่ มี type เป็น double
 2.What operations are needed?
   for Hero class
 	1.constructor Hero(String career) รับอาชีพของ hero ที่ผู้เล่นเลือกเข้ามาเพื่อสร้าง object ตัว hero นั้นๆ ขึ้นมา
@@ -30,7 +31,7 @@
 	4.maxRunSpeed = runSpeed*10
   - ทางด้าน equipment ค่า damage ของอาวุธจะถูกอัพเดตทุกครั้งเมื่ออาวุธมีการอัพเลเวล สูตรคำนวณ ดังนี้ 
 	sword  damage = damage*(1+0.1*equipLevel)
-	shield damage = damage*(1+0.5*equipLevel)
+	shield defense = defense*(1+0.5*equipLevel)
 	
 	
 
